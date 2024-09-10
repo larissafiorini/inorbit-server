@@ -1,0 +1,8 @@
+npm i -D drizzle-kit
+npm install @paralleldrive/cuid2
+
+//populate database:
+npx drizzle-kit generate  -> create migrations folder
+
+//to run
+vercel dev

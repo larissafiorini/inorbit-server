@@ -1,0 +1,11 @@
+INSERT INTO goals (id, title, desired_weekly_frequency)
+VALUES 
+('goal1', 'Exercise Daily', 7),
+('goal2', 'Read Books', 3),
+('goal3', 'Meditate', 5);
+
+INSERT INTO goal_completions (id, goal_id)
+VALUES 
+('completion1', 'goal1'),
+('completion2', 'goal2'),
+('completion3', 'goal1');
