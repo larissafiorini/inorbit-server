@@ -2,6 +2,7 @@ import Fastify from 'fastify'
 import { createGoal } from '../functions/create-goal'
 import { getWeekPendingGoals } from '../functions/get-week-pending-goals'
 import { createGoalCompletion } from '../functions/create-goal-completion'
+import { getWeekSummary } from '../functions/get-week-summary'
 
 const app = Fastify({
   logger: true,
@@ -32,6 +33,12 @@ app.post('/completions',
     await createGoalCompletion({ goalId })
   }
 )
+
+app.get('/summary', async () => {
+  const { summary } = await getWeekSummary()
+  
+  return { summary }
+})
 
 export default async function handler(req, reply) {
   await app.ready()
