@@ -3,9 +3,14 @@ import { createGoal } from '../functions/create-goal'
 import { getWeekPendingGoals } from '../functions/get-week-pending-goals'
 import { createGoalCompletion } from '../functions/create-goal-completion'
 import { getWeekSummary } from '../functions/get-week-summary'
+import fastifyCors from '@fastify/cors'
 
 const app = Fastify({
   logger: true,
+})
+
+app.register(fastifyCors, {
+  origin: '*',
 })
 
 app.get('/', async (req, reply) => {
